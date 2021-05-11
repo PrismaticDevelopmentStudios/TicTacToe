@@ -14,7 +14,7 @@
     </div>
     <p v-if="winner" class="winner">{{ winner }}</p>
     <div id="holdDoOver">
-      <button class="btn" @click="doOver">New Game</button>
+      <button emote class="btn" @click="doOver">New Game</button>
 
       <button class="rbtn" @click="restart">Reset Score</button>
     </div>
