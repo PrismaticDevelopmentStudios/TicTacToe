@@ -11,7 +11,9 @@
       <p class="left score">Score:</p>
       <p class="score left"><b>X:</b> {{ xWins }}</p>
       <p class="score left"><b>O:</b> {{ yWins }}</p>
+      <!-- <p class="score left"><b>Turn: </b>{{ turn }}</p> -->
     </div>
+    <p v-if="cat" class="winner">{{ cat }}</p>
     <p v-if="winner" class="winner">{{ winner }}</p>
     <div id="holdDoOver">
       <button emote class="btn" @click="doOver">New Game</button>
@@ -121,6 +123,8 @@
 <script>
 export default {
   data() {
+    var turn = 0;
+    var cat = false;
     var btn = false;
     var winner = false;
     var xWins = 0;
@@ -164,6 +168,8 @@ export default {
     var hideY9 = true;
 
     return {
+      cat,
+      turn,
       btn,
       winner,
       xWins,
@@ -211,6 +217,8 @@ export default {
   methods: {
     // restart
     doOver() {
+      this.turn = 0;
+      this.cat = false;
       this.btn = false;
       this.whosTurn = "X";
       this.winner = false;
@@ -271,6 +279,10 @@ export default {
           console.log("X placed on 1");
           this.hideX1 = false;
           this.showX1 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 1,2,3
@@ -328,6 +340,10 @@ export default {
           console.log("X placed on 2");
           this.hideX2 = false;
           this.showX2 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 2,5,8
@@ -355,6 +371,10 @@ export default {
           console.log("X placed on 3");
           this.hideX3 = false;
           this.showX3 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         if (
@@ -413,6 +433,10 @@ export default {
           console.log("X placed on 4");
           this.hideX4 = false;
           this.showX4 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         if (
@@ -439,6 +463,10 @@ export default {
           console.log("X placed on 5");
           this.hideX5 = false;
           this.showX5 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 1,5,9
@@ -488,6 +516,10 @@ export default {
           console.log("X placed on 6");
           this.hideX6 = false;
           this.showX6 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 4,5,6
@@ -524,6 +556,10 @@ export default {
           console.log("X placed on 7");
           this.hideX7 = false;
           this.showX7 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 1,4,7
@@ -560,6 +596,10 @@ export default {
           console.log("X placed on 1");
           this.hideX8 = false;
           this.showX8 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 2,5,8
@@ -583,6 +623,10 @@ export default {
           console.log("X placed on 9");
           this.hideX9 = false;
           this.showX9 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.yTurn();
         }
         // 1,5,9
@@ -633,6 +677,10 @@ export default {
           console.log("O placed on 1");
           this.hideY1 = false;
           this.showY1 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // LEFT OFF HERE 5/9
@@ -689,6 +737,10 @@ export default {
           console.log("O placed on 2");
           this.hideY2 = false;
           this.showY2 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 2,5,8
@@ -717,6 +769,10 @@ export default {
           console.log("O placed on 3");
           this.hideY3 = false;
           this.showY3 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 1,2,3
@@ -775,6 +831,10 @@ export default {
           console.log("O placed on 4");
           this.hideY4 = false;
           this.showY4 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 1,4,7
@@ -819,6 +879,10 @@ export default {
           console.log("O placed on 5");
           this.hideY5 = false;
           this.showY5 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 1,5,9
@@ -879,6 +943,10 @@ export default {
           console.log("O placed on 6");
           this.hideY6 = false;
           this.showY6 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 4,5,6
@@ -923,6 +991,10 @@ export default {
           console.log("O placed on 7");
           this.hideY7 = false;
           this.showY7 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 1,4,7
@@ -983,6 +1055,10 @@ export default {
           console.log("O placed on 8");
           this.hideY8 = false;
           this.showY8 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 2,5,8
@@ -1027,6 +1103,10 @@ export default {
           console.log("O placed on 9");
           this.hideY9 = false;
           this.showY9 = true;
+          this.turn++;
+          if (this.turn === 9 && this.winner === false) {
+            this.cat = "Cat's Game";
+          }
           this.xTurn();
         }
         // 1,5,9
