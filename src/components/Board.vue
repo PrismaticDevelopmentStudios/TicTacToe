@@ -123,6 +123,8 @@
 <script>
 export default {
   data() {
+    var audio = new Audio(require("@/assets/click.mp3"));
+    var bell = new Audio(require("@/assets/bell.mp3"));
     var turn = 0;
     var cat = false;
     var btn = false;
@@ -168,6 +170,8 @@ export default {
     var hideY9 = true;
 
     return {
+      audio,
+      bell,
       cat,
       turn,
       btn,
@@ -215,6 +219,12 @@ export default {
     };
   },
   methods: {
+    click() {
+      this.audio.play();
+    },
+    win() {
+      this.bell.play();
+    },
     // restart
     doOver() {
       this.turn = 0;
@@ -283,6 +293,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 1,2,3
@@ -292,6 +303,7 @@ export default {
           this.showX3 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -310,6 +322,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!!!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -322,6 +335,7 @@ export default {
           this.showX7 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -344,6 +358,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 1,2,3
@@ -353,6 +368,7 @@ export default {
           this.showX3 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -370,6 +386,7 @@ export default {
           this.showX8 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -392,6 +409,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         if (
@@ -400,6 +418,7 @@ export default {
           this.showX3 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -416,6 +435,7 @@ export default {
           this.showX9 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -454,6 +474,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         if (
@@ -462,6 +483,7 @@ export default {
           this.showX6 === true
         ) {
           this.winner = "X Wins!";
+          this.win();
           console.log(this.xWins);
 
           ++this.xWins;
@@ -484,6 +506,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 1,5,9
@@ -494,6 +517,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -507,6 +531,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -520,6 +545,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -537,6 +563,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 4,5,6
@@ -547,6 +574,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -560,6 +588,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -577,6 +606,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 1,4,7
@@ -587,6 +617,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -600,6 +631,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -617,6 +649,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 2,5,8
@@ -627,6 +660,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -644,6 +678,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.yTurn();
         }
         // 1,5,9
@@ -654,6 +689,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -667,6 +703,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -680,6 +717,7 @@ export default {
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
+          this.win();
           ++this.xWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -698,6 +736,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // LEFT OFF HERE 5/9
@@ -708,6 +747,7 @@ export default {
           this.showY3 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -725,6 +765,7 @@ export default {
         ) {
           console.log(this.yWins);
           this.winner = "O Wins!!!";
+          this.win();
           ++this.yWins;
           window.scrollTo(0, 0);
           this.btn = true;
@@ -736,6 +777,7 @@ export default {
           this.showY7 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -758,6 +800,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 2,5,8
@@ -767,6 +810,7 @@ export default {
           this.showY8 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -790,6 +834,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 1,2,3
@@ -799,6 +844,7 @@ export default {
           this.showY3 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -815,6 +861,7 @@ export default {
           this.showY7 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -831,6 +878,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -852,6 +900,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 1,4,7
@@ -861,6 +910,7 @@ export default {
           this.showY7 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -877,6 +927,7 @@ export default {
           this.showY6 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -900,6 +951,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 1,5,9
@@ -909,6 +961,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -925,6 +978,7 @@ export default {
           this.showY6 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -941,6 +995,7 @@ export default {
           this.showY7 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -964,6 +1019,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 4,5,6
@@ -973,6 +1029,7 @@ export default {
           this.showY6 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -989,6 +1046,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1012,6 +1070,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 1,4,7
@@ -1021,6 +1080,7 @@ export default {
           this.showY7 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1037,6 +1097,7 @@ export default {
           this.showY7 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1053,6 +1114,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1076,6 +1138,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 2,5,8
@@ -1085,6 +1148,7 @@ export default {
           this.showY8 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1101,6 +1165,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1124,6 +1189,7 @@ export default {
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
           }
+          this.click();
           this.xTurn();
         }
         // 1,5,9
@@ -1133,6 +1199,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1149,6 +1216,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
@@ -1164,6 +1232,7 @@ export default {
           this.showY9 === true
         ) {
           this.winner = "O Wins!";
+          this.win();
           console.log(this.yWins);
 
           ++this.yWins;
