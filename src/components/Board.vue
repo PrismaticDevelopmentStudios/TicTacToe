@@ -494,6 +494,23 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (
+          this.showX1 === true &&
+          this.showX4 === true &&
+          this.showX7 === true
+        ) {
+          this.winner = "X Wins!";
+          this.win();
+          console.log(this.xWins);
+
+          ++this.xWins;
+          this.btn = true;
+
+          console.log(this.xWins);
+          window.scrollTo(0, 0);
+          this.btn = true;
+          console.log(this.winner);
+        }
       }
     },
     placeX5() {
@@ -656,6 +673,20 @@ export default {
         if (
           this.showX2 === true &&
           this.showX5 === true &&
+          this.showX8 === true
+        ) {
+          console.log(this.xWins);
+          this.winner = "X Wins!";
+          this.win();
+          ++this.xWins;
+          window.scrollTo(0, 0);
+          this.btn = true;
+          console.log("X wins");
+        }
+        // 2,5,8
+        if (
+          this.showX1 === true &&
+          this.showX4 === true &&
           this.showX8 === true
         ) {
           console.log(this.xWins);
