@@ -346,6 +346,23 @@ export default {
           }
           this.yTurn();
         }
+        // 1,2,3
+        if (
+          this.showX1 === true &&
+          this.showX2 === true &&
+          this.showX3 === true
+        ) {
+          this.winner = "X Wins!";
+          console.log(this.xWins);
+
+          ++this.xWins;
+          this.btn = true;
+
+          console.log(this.xWins);
+          window.scrollTo(0, 0);
+          this.btn = true;
+          console.log(this.winner);
+        }
         // 2,5,8
         if (
           this.showX2 === true &&
