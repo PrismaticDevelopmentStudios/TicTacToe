@@ -985,11 +985,11 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
+        this.xTurn();
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     placeY5() {
       if (this.whosTurn === "O") {
@@ -1053,11 +1053,11 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
+        this.xTurn();
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     placeY6() {
       if (this.whosTurn === "O") {
@@ -1104,11 +1104,11 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
+        this.xTurn();
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     placeY7() {
       if (this.whosTurn === "O") {
@@ -1172,11 +1172,11 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
+        this.xTurn();
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     placeY8() {
       if (this.whosTurn === "O") {
@@ -1223,11 +1223,12 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
+        this.xTurn();
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     placeY9() {
       if (this.whosTurn === "O") {
@@ -1290,11 +1291,11 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
+        this.xTurn();
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     restart() {
       window.scrollTo(0, 1000);
