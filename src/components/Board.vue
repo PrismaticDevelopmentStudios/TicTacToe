@@ -124,6 +124,7 @@
 export default {
   data() {
     var audio = new Audio(require("@/assets/click.mp3"));
+    var meow = new Audio(require("@/assets/meow.mp3"));
     var bell = new Audio(require("@/assets/bell.mp3"));
     var turn = 0;
     var cat = false;
@@ -171,6 +172,7 @@ export default {
 
     return {
       audio,
+      meow,
       bell,
       cat,
       turn,
@@ -224,6 +226,9 @@ export default {
     },
     win() {
       this.bell.play();
+    },
+    catgame() {
+      this.meow.play();
     },
     // restart
     doOver() {
@@ -290,9 +295,7 @@ export default {
           this.hideX1 = false;
           this.showX1 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -346,6 +349,10 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
+        }
       } // END whoseTurn if statement
     }, // END PlaceX1
     placeX2() {
@@ -355,9 +362,7 @@ export default {
           this.hideX2 = false;
           this.showX2 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -408,6 +413,7 @@ export default {
           this.turn++;
           if (this.turn === 9 && this.winner === false) {
             this.cat = "Cat's Game";
+            this.catgame();
           }
           this.click();
           this.yTurn();
@@ -462,6 +468,10 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
+        }
       }
     },
     placeX4() {
@@ -471,9 +481,7 @@ export default {
           this.hideX4 = false;
           this.showX4 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -511,6 +519,10 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
+        }
       }
     },
     placeX5() {
@@ -520,9 +532,7 @@ export default {
           this.hideX5 = false;
           this.showX5 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -568,6 +578,10 @@ export default {
           this.btn = true;
           console.log("X wins");
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
+        }
       } // END If statement
     }, // END placeX5
     placeX6() {
@@ -577,9 +591,7 @@ export default {
           this.hideX6 = false;
           this.showX6 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -611,6 +623,9 @@ export default {
           this.btn = true;
           console.log("X wins");
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
       }
     },
     placeX7() {
@@ -620,9 +635,7 @@ export default {
           this.hideX7 = false;
           this.showX7 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -654,6 +667,9 @@ export default {
           this.btn = true;
           console.log("X wins");
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
       }
     },
     placeX8() {
@@ -663,13 +679,11 @@ export default {
           this.hideX8 = false;
           this.showX8 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
-        // 2,5,8
+        // ,5,8
         if (
           this.showX2 === true &&
           this.showX5 === true &&
@@ -683,11 +697,11 @@ export default {
           this.btn = true;
           console.log("X wins");
         }
-        // 2,5,8
+        // 7,8,9
         if (
-          this.showX1 === true &&
-          this.showX4 === true &&
-          this.showX8 === true
+          this.showX7 === true &&
+          this.showX8 === true &&
+          this.showX9 === true
         ) {
           console.log(this.xWins);
           this.winner = "X Wins!";
@@ -696,6 +710,9 @@ export default {
           window.scrollTo(0, 0);
           this.btn = true;
           console.log("X wins");
+        }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
         }
       }
     },
@@ -706,9 +723,7 @@ export default {
           this.hideX9 = false;
           this.showX9 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.yTurn();
         }
@@ -819,6 +834,9 @@ export default {
           console.log(this.winner);
         }
         this.xTurn();
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
       }
     },
     placeY2() {
@@ -828,9 +846,7 @@ export default {
           this.hideY2 = false;
           this.showY2 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -852,7 +868,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     placeY3() {
@@ -862,9 +880,7 @@ export default {
           this.hideY3 = false;
           this.showY3 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -919,6 +935,9 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+        }
       }
     },
     placeY4() {
@@ -928,9 +947,7 @@ export default {
           this.hideY4 = false;
           this.showY4 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -969,7 +986,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     placeY5() {
@@ -979,9 +998,7 @@ export default {
           this.hideY5 = false;
           this.showY5 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -1037,7 +1054,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     placeY6() {
@@ -1047,9 +1066,7 @@ export default {
           this.hideY6 = false;
           this.showY6 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -1088,7 +1105,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     placeY7() {
@@ -1098,9 +1117,7 @@ export default {
           this.hideY7 = false;
           this.showY7 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -1156,7 +1173,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     placeY8() {
@@ -1166,9 +1185,7 @@ export default {
           this.hideY8 = false;
           this.showY8 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -1207,7 +1224,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     placeY9() {
@@ -1217,9 +1236,7 @@ export default {
           this.hideY9 = false;
           this.showY9 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-          }
+
           this.click();
           this.xTurn();
         }
@@ -1274,7 +1291,9 @@ export default {
           console.log(this.winner);
         }
       }
-
+      if (this.turn === 9 && this.winner === false) {
+        this.cat = "Cat's Game";
+      }
       this.xTurn();
     },
     restart() {

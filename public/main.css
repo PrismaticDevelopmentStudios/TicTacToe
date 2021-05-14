@@ -1,6 +1,9 @@
 @media only screen and (max-width: 600px) {
     body {
-        width: 100%;
-        max-width: 600px;
+        background-color: rgb(229, 230, 173);
+    }
+
+    .hide {
+        color: rgb(229, 230, 173);
     }
 }
