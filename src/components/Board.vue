@@ -411,10 +411,7 @@ export default {
           this.hideX3 = false;
           this.showX3 = true;
           this.turn++;
-          if (this.turn === 9 && this.winner === false) {
-            this.cat = "Cat's Game";
-            this.catgame();
-          }
+
           this.click();
           this.yTurn();
         }
@@ -459,7 +456,7 @@ export default {
         ) {
           this.winner = "X Wins!";
           console.log(this.xWins);
-
+          this.win();
           ++this.xWins;
           this.btn = true;
 
