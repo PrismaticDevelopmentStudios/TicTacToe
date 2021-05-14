@@ -100,19 +100,19 @@
       <div class="below">
         <table>
           <tr>
-            <td class="q" id="q10" @click="placeY1">q</td>
-            <td class="q" id="q11" @click="placeY2">q</td>
-            <td class="q" id="q12" @click="placeY3">q</td>
+            <td class="white" id="q10">q</td>
+            <td class="white" id="q11">q</td>
+            <td class="white" id="q12">q</td>
           </tr>
           <tr>
-            <td class="q" id="q13" @click="placeY4">q</td>
-            <td class="q" id="q14" @click="placeY5">q</td>
-            <td class="q" id="q15" @click="placeY6">q</td>
+            <td class="white" id="q13">q</td>
+            <td class="white" id="q14">q</td>
+            <td class="white" id="q15">q</td>
           </tr>
           <tr>
-            <td class="q" id="q16" @click="placeY7">q</td>
-            <td class="q" id="q17" @click="placeY8">q</td>
-            <td class="q" id="q18" @click="placeY9">q</td>
+            <td class="white" id="q16">q</td>
+            <td class="white" id="q17">q</td>
+            <td class="white" id="q18">q</td>
           </tr>
         </table>
       </div>
@@ -402,6 +402,10 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
+        }
       } // END whoseTurn if statement
     }, // END PlaceX2
     placeX3() {
@@ -622,6 +626,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
       }
     },
@@ -666,6 +671,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
       }
     },
@@ -710,6 +716,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
       }
     },
@@ -765,6 +772,10 @@ export default {
           window.scrollTo(0, 0);
           this.btn = true;
           console.log("X wins");
+        }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
         }
       }
     },
@@ -833,6 +844,7 @@ export default {
         this.xTurn();
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
       }
     },
@@ -864,11 +876,11 @@ export default {
           this.btn = true;
           console.log(this.winner);
         }
+        if (this.turn === 9 && this.winner === false) {
+          this.cat = "Cat's Game";
+          this.catgame();
+        }
       }
-      if (this.turn === 9 && this.winner === false) {
-        this.cat = "Cat's Game";
-      }
-      this.xTurn();
     },
     placeY3() {
       if (this.whosTurn === "O") {
@@ -934,6 +946,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
       }
     },
@@ -984,6 +997,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
         this.xTurn();
       }
@@ -1052,6 +1066,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
         this.xTurn();
       }
@@ -1103,6 +1118,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
         this.xTurn();
       }
@@ -1171,6 +1187,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
         this.xTurn();
       }
@@ -1223,6 +1240,7 @@ export default {
 
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
         this.xTurn();
       }
@@ -1290,6 +1308,7 @@ export default {
         }
         if (this.turn === 9 && this.winner === false) {
           this.cat = "Cat's Game";
+          this.catgame();
         }
         this.xTurn();
       }
@@ -1322,7 +1341,7 @@ td {
 td {
   width: 33em;
   height: 33%;
-  background: rgb(255, 255, 255, 0.5);
+  /* background: rgb(255, 255, 255, 0.5); */
   font-size: 5em;
   font-weight: 600;
 }
@@ -1426,5 +1445,8 @@ h1 {
 }
 #whose {
   margin-right: 0.5em;
+}
+.white {
+  background: white;
 }
 </style>
