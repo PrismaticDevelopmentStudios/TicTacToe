@@ -1336,12 +1336,11 @@ table,
 td {
   border: 1px solid black;
   border-collapse: collapse;
-  position: relative;
 }
 td {
   width: 33em;
   height: 33%;
-  /* background: rgb(255, 255, 255, 0.5); */
+  position: relative;
   font-size: 5em;
   font-weight: 600;
 }
